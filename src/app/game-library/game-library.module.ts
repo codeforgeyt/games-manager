@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShelfComponent } from './components/shelf/shelf.component';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { GameLibraryRoutingModule } from './game-library-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [ShelfComponent, TopNavigationComponent],
@@ -18,7 +21,10 @@ import { GameLibraryRoutingModule } from './game-library-routing.module';
     MatIconModule,
     CommonModule,
     GameLibraryRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatInputModule
   ],
   exports: [
     ShelfComponent,
