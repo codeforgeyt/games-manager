@@ -1,0 +1,27 @@
+<h2 class="mat-h2">Add new game</h2>
+
+<form (ngSubmit)="addGame()">
+    <mat-form-field class="full-width-input">
+        <input matInput [formControl]="titleControl" placeholder="Title" value="" name="title" required>
+        <mat-error *ngIf="titleControl.hasError('required')">
+            Title is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width-input">
+        <mat-label>Genre</mat-label>
+        <mat-select [formControl]="genreControl" name="genre" required>
+            <mat-option *ngFor="let genre of genres" [value]="genre">
+                {{genre}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="genreControl.hasError('required')">
+            Genre is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <div class="button-wrapper">
+        <button mat-stroked-button type="button" color="accent" (click)="closeDialog()">Cancel</button>
+        <button mat-flat-button type="submit" color="primary">Add</button>
+    </div>
+</form>

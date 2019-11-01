@@ -11,9 +11,15 @@ import { GameLibraryRoutingModule } from './game-library-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddGameModalComponent } from './components/add-game-modal/add-game-modal.component';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
-  declarations: [ShelfComponent, TopNavigationComponent],
+  declarations: [ShelfComponent, TopNavigationComponent, AddGameModalComponent],
   imports: [
     MatToolbarModule,
     MatTableModule,
@@ -24,11 +30,20 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   exports: [
     ShelfComponent,
     TopNavigationComponent
+  ],
+  entryComponents: [
+    AddGameModalComponent
   ]
 })
 export class GameLibraryModule { }

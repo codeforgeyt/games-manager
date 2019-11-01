@@ -33,7 +33,14 @@ export class GameService {
 
   getGames(): Observable<Game[]> {
     return of(this.games).pipe(
-      delay(3000)
+      delay(1000)
+    );
+  }
+
+  addGame(game: Game): Observable<Game> {
+    this.games.push(game);
+    return of(game).pipe(
+      delay(1000)
     );
   }
 }
